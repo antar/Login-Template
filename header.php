@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!doctype html>
 <html>
   <head>
@@ -28,13 +32,27 @@
   <body>
 
 	<header id="header">
+		<!-- Welcome Information if User logged in -->
+	  <?php 
+	  if (isset($_SESSION["useruid"])) {
+			echo "<h1 style='color: #ef6d3d;'>Welcome Back " . $_SESSION["useruid"] . "</h1>";
+		}
+	  ?>
 	  <img src="images/logo.jpg">
 	  <h1>Jira</h1>
 	  
 	  <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
 	  <ul class="main-menu">
-		<li><a href="#home">Home</a></li>
-		<li><a href="#signup">Sign Up</a></li>
-		<li><a href="#login">Log In</a></li>
+		<li><a id="home" href="index.php">Home</a></li>
+		<?php
+			if (isset($_SESSION["useruid"])) {
+				echo "<li><a href='jira.php'>Jira Dashboard</a></li>";
+				echo "<li><a href='includes/logout.inc.php'>Log Out</a></li>";
+			}
+			else {
+				echo "<li><a href='signup.php'>Sign Up</a></li>";
+				echo "<li><a href='login.php'>Log In</a></li>";
+			}
+		?>
 	  </ul>                 
 	</header>
