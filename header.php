@@ -33,8 +33,8 @@
 	  
 	  <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
 	  <ul class="main-menu">
-		<li><a href="#home">home</a></li>
-		<li><a href="#about">about</a></li>
-		<li><a href="#contact">contact</a></li>
+		<li><a href="#home">Home</a></li>
+		<li><a href="#signup">Sign Up</a></li>
+		<li><a href="#login">Log In</a></li>
 	  </ul>                 
 	</header>
